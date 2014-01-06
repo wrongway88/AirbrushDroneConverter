@@ -193,5 +193,22 @@ namespace AirbrushDroneDataConverter.Flight
 
             return result;
         }
+
+        public static bool operator <(Date date0, Date date1)
+        {
+            int delta = date0.GetDeltaSeconds(date1);
+
+            if (delta == 0 || delta > 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool operator >(Date date0, Date date1)
+        {
+            return (!(date0 < date1));
+        }
     }
 }

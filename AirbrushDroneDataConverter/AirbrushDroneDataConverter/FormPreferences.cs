@@ -12,23 +12,28 @@ using AirbrushDroneDataConverter.Utility;
 
 namespace AirbrushDroneDataConverter
 {
-    public partial class FormLoginData : Form
+    public partial class FormPreferences : Form
     {
-        public FormLoginData()
+        public FormPreferences()
         {
             InitializeComponent();
 
-            propertyGridLoginData.SelectedObject = LoginData.LoadLoginData();
+            propertyGridLoginData.SelectedObject = Preferences.LoadPreferences();
         }
 
         private void FormLoginData_Close(object sender, EventArgs e)
         {
-            LoginData loginData = propertyGridLoginData.SelectedObject as LoginData;
+            Preferences loginData = propertyGridLoginData.SelectedObject as Preferences;
 
             if (loginData != null)
             {
-                LoginData.SaveLoginData(loginData);
+                Preferences.SavePreferences(loginData);
             }
+        }
+
+        private void propertyGridLoginData_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

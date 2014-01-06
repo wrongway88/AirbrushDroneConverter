@@ -11,7 +11,7 @@ using System.IO;
 namespace AirbrushDroneDataConverter.Utility
 {
     [Serializable()]
-    class LoginData : ISerializable
+    class Preferences : ISerializable
     {
         private const string FILE_PATH = "data/config.zut";
 
@@ -19,38 +19,53 @@ namespace AirbrushDroneDataConverter.Utility
         private int _userId = -1;
         private string _password = "";
 
-        static public LoginData LoadLoginData()
-        {
-            LoginData loginData = new LoginData();
+        private string _lastUsedFilePath = "";
 
-            Stream stream = File.Open(FILE_PATH, FileMode.Open);
-            if (stream != null)
+        static public Preferences LoadPreferences()
+        {
+            Preferences preferences = new Preferences();
+
+            Stream stream = null;
+
+            try
             {
-                BinaryFormatter formatter = new BinaryFormatter();
-                loginData = (LoginData)formatter.Deserialize(stream);
-                stream.Close();
+                stream = File.Open(FILE_PATH, FileMode.Open);
+            }
+            catch (Exception e)
+            {
+                
+            }
+            finally
+            {
+                if (stream != null)
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    preferences = (Preferences)formatter.Deserialize(stream);
+                    stream.Close();
+                }
             }
 
-            return loginData;
+            return preferences;
         }
 
-        static public void SaveLoginData(LoginData loginData)
+        static public void SavePreferences(Preferences preferences)
         {
             Stream stream = File.Open(FILE_PATH, FileMode.OpenOrCreate);
             BinaryFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(stream, loginData);
+            formatter.Serialize(stream, preferences);
             stream.Close();
         }
 
-        public LoginData()
+        public Preferences()
         {
         }
 
-        public LoginData(SerializationInfo info, StreamingContext context)
+        public Preferences(SerializationInfo info, StreamingContext context)
         {
             _mailAddress = (string)info.GetValue("_mailAddress", typeof(string));
             _userId = (int)info.GetValue("_userId", typeof(int));
             _password = (string)info.GetValue("_password", typeof(string));
+            _lastUsedFilePath = (string)info.GetValue("_lastUsedFilePath", typeof(string));
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -58,6 +73,7 @@ namespace AirbrushDroneDataConverter.Utility
             info.AddValue("_mailAddress", _mailAddress);
             info.AddValue("_userId", _userId);
             info.AddValue("_password", _password);
+            info.AddValue("_lastUsedFilePath", _lastUsedFilePath);
         }
 
         public string MailAddress
@@ -76,6 +92,12 @@ namespace AirbrushDroneDataConverter.Utility
         {
             get { return _password; }
             set { _password = value; }
+        }
+
+        public string LastUsedFilePath
+        {
+            get { return _lastUsedFilePath; }
+            set { _lastUsedFilePath = value; }
         }
     }
 }

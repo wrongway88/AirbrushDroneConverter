@@ -1,6 +1,6 @@
 ﻿namespace AirbrushDroneDataConverter
 {
-    partial class FormLoginData
+    partial class FormPreferences
     {
         /// <summary>
         /// Required designer variable.
@@ -33,18 +33,22 @@
             // 
             // propertyGridLoginData
             // 
+            this.propertyGridLoginData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.propertyGridLoginData.Location = new System.Drawing.Point(12, 12);
             this.propertyGridLoginData.Name = "propertyGridLoginData";
             this.propertyGridLoginData.Size = new System.Drawing.Size(300, 173);
             this.propertyGridLoginData.TabIndex = 0;
+            this.propertyGridLoginData.Click += new System.EventHandler(this.propertyGridLoginData_Click);
             // 
-            // FormLoginData
+            // FormPreferences
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(324, 197);
             this.Controls.Add(this.propertyGridLoginData);
-            this.Name = "FormLoginData";
+            this.Name = "FormPreferences";
             this.Text = "FormLoginData";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoginData_Close);
             this.ResumeLayout(false);

@@ -57,18 +57,9 @@ namespace AirbrushDroneDataConverter.WebInterface
         {
             try
             {
-                MD5 md5 = MD5.Create();
-                byte[] input = System.Text.ASCIIEncoding.ASCII.GetBytes(password);
-                byte[] output = md5.ComputeHash(input);
-
-                StringBuilder sb = new StringBuilder();
-                for (uint i = 0; i < output.Length; i++)
-                {
-                    sb.Append(output[i].ToString("X"));
-                }
-
-                string passwordHash = sb.ToString();
-                passwordHash = passwordHash.ToLower();
+                byte[] input = System.Text.UTF8Encoding.UTF8.GetBytes(password);
+                byte[] output = SHA256.Create().ComputeHash(input);
+                string passwordHash = BitConverter.ToString(output).Replace("-", "").ToLower();
 
                 string postData = "id=" + userId.ToString() + "&password=" + passwordHash;
 
@@ -101,6 +92,22 @@ namespace AirbrushDroneDataConverter.WebInterface
                 }
 
                 SendPost(ADDRESS_POST_FLIGHT, postData, cookie);
+            }
+            catch (Exception exception)
+            {
+
+            }
+        }
+
+        public static void TestCookie()
+        {
+            try
+            {
+                Cookie cookie = new Cookie("test", "foo");
+
+                String response = SendGet("http://airbrush.nucular-bacon.com/", "", cookie);
+
+                System.Windows.Forms.MessageBox.Show(response);
             }
             catch (Exception exception)
             {
@@ -148,7 +155,7 @@ namespace AirbrushDroneDataConverter.WebInterface
             return responseString;
         }
 
-        private static string SendGet(string address, string postData = "")
+        private static string SendGet(string address, string postData = "", Cookie cookie = null)
         {
             string responseString = "POST Request failed";
 
@@ -163,6 +170,12 @@ namespace AirbrushDroneDataConverter.WebInterface
                 httpRequest.ContentType = "application/x-www-form-urlencoded";
                 httpRequest.Accept = "application/json";
                 httpRequest.ContentLength = data.Length;
+
+                if (cookie != null)
+                {
+                    httpRequest.CookieContainer = new CookieContainer();
+                    httpRequest.CookieContainer.Add(new Uri(address), cookie);
+                }
 
                 HttpWebResponse response = (HttpWebResponse)httpRequest.GetResponse();
                 responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
