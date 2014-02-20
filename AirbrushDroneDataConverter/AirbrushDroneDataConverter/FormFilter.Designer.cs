@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFilter));
             this.propertyGridFilter = new System.Windows.Forms.PropertyGrid();
             this.propertyGridMinDate = new System.Windows.Forms.PropertyGrid();
             this.propertyGridMaxDate = new System.Windows.Forms.PropertyGrid();
@@ -97,6 +98,7 @@
             this.Controls.Add(this.propertyGridMaxDate);
             this.Controls.Add(this.propertyGridMinDate);
             this.Controls.Add(this.propertyGridFilter);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormFilter";
             this.Text = "FormFilter";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormFilter_Close);

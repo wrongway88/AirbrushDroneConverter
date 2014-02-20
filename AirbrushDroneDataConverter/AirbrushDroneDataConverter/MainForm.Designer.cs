@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.listViewFlights = new System.Windows.Forms.ListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.airplane = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,6 +41,8 @@
             this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorkerLoadFiles = new System.ComponentModel.BackgroundWorker();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,9 +56,9 @@
             this.airplane,
             this.date,
             this.waypointCount});
-            this.listViewFlights.Location = new System.Drawing.Point(12, 38);
+            this.listViewFlights.Location = new System.Drawing.Point(12, 27);
             this.listViewFlights.Name = "listViewFlights";
-            this.listViewFlights.Size = new System.Drawing.Size(482, 283);
+            this.listViewFlights.Size = new System.Drawing.Size(482, 286);
             this.listViewFlights.TabIndex = 1;
             this.listViewFlights.UseCompatibleStateImageBehavior = false;
             this.listViewFlights.View = System.Windows.Forms.View.Details;
@@ -103,7 +106,7 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
@@ -137,16 +140,36 @@
             this.dateToolStripMenuItem.Text = "Edit";
             this.dateToolStripMenuItem.Click += new System.EventHandler(this.filterToolStripMenuItem_Click);
             // 
+            // backgroundWorkerLoadFiles
+            // 
+            this.backgroundWorkerLoadFiles.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerLoadFiles_DoWork);
+            this.backgroundWorkerLoadFiles.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerLoadFiles_ProgressChanged);
+            this.backgroundWorkerLoadFiles.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerLoadFiles_RunWorkerCompleted);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(151, 0);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(342, 23);
+            this.progressBar1.TabIndex = 4;
+            this.progressBar1.UseWaitCursor = true;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 333);
+            this.ClientSize = new System.Drawing.Size(505, 325);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.listViewFlights);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Airbrush DroneDataConverter";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -168,6 +191,8 @@
         private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dateToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerLoadFiles;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

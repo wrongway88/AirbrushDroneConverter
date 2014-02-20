@@ -42,8 +42,6 @@ namespace AirbrushDroneDataConverter.WebInterface
                         }
                     }
                 }
-
-                System.Windows.Forms.MessageBox.Show(response);
             }
             catch(Exception exception)
             {
@@ -115,6 +113,18 @@ namespace AirbrushDroneDataConverter.WebInterface
             }
         }
 
+        public static void TestAccountCreation()
+        {
+            String name = "George";
+            String surname = "Grumman";
+            String email = "george@test.com";
+            String password = "test";
+
+            String postData = "name=" + name + "&surname=" + surname + "&email=" + email + "&password=" + password;
+
+            SendPost("http://airbrush.nucular-bacon.com/api/user", postData);
+        }
+
         private static string SendPost(string address, string postData = "", Cookie cookie = null)
         {
             string responseString = "POST Request failed";
@@ -136,6 +146,8 @@ namespace AirbrushDroneDataConverter.WebInterface
                     httpRequest.CookieContainer = new CookieContainer();
                     httpRequest.CookieContainer.Add(new Uri(address), cookie);
                 }
+
+                //System.Windows.Forms.MessageBox.Show(httpRequest.GetRequestStream().ToString());
 
                 using (Stream stream = httpRequest.GetRequestStream())
                 {

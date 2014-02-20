@@ -20,31 +20,16 @@ namespace AirbrushDroneDataConverter
         private Filter _filter = new Filter();
         private String _filePath = "";
 
+        private string[] _files = null;
+
+        private bool _isLoading = false;
+
         public MainForm()
         {
             InitializeComponent();
 
             Preferences preferences = Preferences.LoadPreferences();
             _filePath = preferences.LastUsedFilePath;
-        }
-
-        private void openFiles(string[] filePaths)
-        {
-            foreach (string filePath in filePaths)
-            {
-                string ending = filePath.Substring(filePath.Length - 3, 3);
-
-                if(ending == "log")
-                {
-                    StreamReader file = new StreamReader(filePath);
-
-                    String fileName = filePath.Substring(filePath.LastIndexOf("\\")+1);
-                    _flights.AddRange(DroneDataConverter.ConvertFile(file, fileName));
-                }
-            }
-
-            listViewFlights.Items.Clear();
-            fillFlightList(_flights);
         }
 
         private void fillFlightList(List<Flight.Flight> flights)
@@ -131,6 +116,9 @@ namespace AirbrushDroneDataConverter
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (_isLoading == true)
+                return;
+
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.SelectedPath = _filePath;
             
@@ -142,8 +130,12 @@ namespace AirbrushDroneDataConverter
                 Preferences preferences = Preferences.LoadPreferences();
                 preferences.LastUsedFilePath = _filePath;
                 Preferences.SavePreferences(preferences);
-                string[] files = Directory.GetFiles(fbd.SelectedPath);
-                openFiles(files);
+                //string[] files = Directory.GetFiles(fbd.SelectedPath);
+                _files = Directory.GetFiles(fbd.SelectedPath);
+
+                //openFiles(files);
+
+                backgroundWorkerLoadFiles.RunWorkerAsync();
             }
         }
 
@@ -166,6 +158,60 @@ namespace AirbrushDroneDataConverter
             listViewFlights.Items.Clear();
 
             fillFlightList(_flights);
+        }
+
+        private void backgroundWorkerLoadFiles_DoWork(object sender, DoWorkEventArgs e)
+        {
+            _isLoading = true;
+            openFiles(_files);
+        }
+
+        private void openFiles(string[] filePaths)
+        {
+            int fileCount = filePaths.Length;
+            int counter = 0;
+
+            foreach (string filePath in filePaths)
+            {
+                string ending = filePath.Substring(filePath.Length - 3, 3);
+
+                if (ending == "log")
+                {
+                    StreamReader file = new StreamReader(filePath);
+
+                    String fileName = filePath.Substring(filePath.LastIndexOf("\\") + 1);
+                    _flights.AddRange(DroneDataConverter.ConvertFile(file, fileName));
+                }
+
+                counter++;
+                backgroundWorkerLoadFiles.WorkerReportsProgress = true;
+                backgroundWorkerLoadFiles.ReportProgress((int)(100.0f * ((float)counter / (float)fileCount)));
+            }
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backgroundWorkerLoadFiles_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
+        }
+
+        private void backgroundWorkerLoadFiles_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            progressBar1.Value = 0;
+
+            listViewFlights.Items.Clear();
+            fillFlightList(_flights);
+
+            _isLoading = false;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

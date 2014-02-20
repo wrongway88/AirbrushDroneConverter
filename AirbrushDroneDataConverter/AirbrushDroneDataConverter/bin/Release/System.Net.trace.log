@@ -1,0 +1,337 @@
+System.Net Information: 0 : [1744] Current OS installation type is 'Client'.
+System.Net Information: 0 : [1744] RAS supported: True
+System.Net Information: 0 : [1744] Associating HttpWebRequest#13476220 with ServicePoint#7904578
+System.Net Information: 0 : [1744] Associating Connection#55652263 with HttpWebRequest#13476220
+System.Net Information: 0 : [1744] Connection#55652263 - Created connection from 192.168.178.24:4732 to 37.200.99.34:80.
+System.Net Information: 0 : [1744] Associating HttpWebRequest#13476220 with ConnectStream#41413
+System.Net Information: 0 : [1744] HttpWebRequest#13476220 - Request: POST /api/user HTTP/1.1
+
+System.Net Information: 0 : [1744] ConnectStream#41413 - Sending headers
+{
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Host: airbrush.nucular-bacon.com
+Content-Length: 63
+Expect: 100-continue
+Connection: Keep-Alive
+}.
+System.Net Information: 0 : [1744] Connection#55652263 - Received status line: Version=1.1, StatusCode=100, StatusDescription=Continue.
+System.Net Information: 0 : [1744] Connection#55652263 - Received headers
+{
+
+}.
+System.Net Information: 0 : [1744] Connection#55652263 - Received status line: Version=1.1, StatusCode=201, StatusDescription=Created.
+System.Net Information: 0 : [1744] Connection#55652263 - Received headers
+{
+Access-Control-Allow-Origin: *
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Length: 144
+Content-Type: application/json; charset=utf-8
+Date: Mon, 10 Feb 2014 00:17:42 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.8
+}.
+System.Net Information: 0 : [1744] ConnectStream#1697950::ConnectStream(Buffered 144 bytes.)
+System.Net Information: 0 : [1744] Associating HttpWebRequest#13476220 with ConnectStream#1697950
+System.Net Information: 0 : [1744] Associating HttpWebRequest#13476220 with HttpWebResponse#2507098
+System.Net Information: 0 : [1744] ContentLength=144
+System.Net Information: 0 : [6740] ServicePoint#7904578 - Closed as idle.
+System.Net Information: 0 : [6740] ServicePoint#7904578 - ConnectionGroup#62125865 - Closed as idle.
+System.Net Information: 0 : [7624] Current OS installation type is 'Client'.
+System.Net Information: 0 : [7624] RAS supported: True
+System.Net Information: 0 : [7624] Associating HttpWebRequest#66622070 with ServicePoint#67041637
+System.Net Information: 0 : [7624] Associating Connection#64083652 with HttpWebRequest#66622070
+System.Net Information: 0 : [7624] Connection#64083652 - Created connection from 192.168.178.24:26641 to 37.200.99.34:80.
+System.Net Information: 0 : [7624] Associating HttpWebRequest#66622070 with ConnectStream#65192075
+System.Net Information: 0 : [7624] HttpWebRequest#66622070 - Request: GET /api/user?email=McDobusch@gmx.net HTTP/1.1
+
+System.Net Information: 0 : [7624] ConnectStream#65192075 - Sending headers
+{
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Host: airbrush.nucular-bacon.com
+Connection: Keep-Alive
+}.
+System.Net Information: 0 : [7624] Connection#64083652 - Received status line: Version=1.1, StatusCode=200, StatusDescription=OK.
+System.Net Information: 0 : [7624] Connection#64083652 - Received headers
+{
+Access-Control-Allow-Origin: *
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Length: 143
+Content-Type: application/json; charset=utf-8
+Date: Fri, 14 Feb 2014 22:48:01 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.8
+}.
+System.Net Information: 0 : [7624] ConnectStream#47962264::ConnectStream(Buffered 143 bytes.)
+System.Net Information: 0 : [7624] Associating HttpWebRequest#66622070 with ConnectStream#47962264
+System.Net Information: 0 : [7624] Associating HttpWebRequest#66622070 with HttpWebResponse#10818254
+System.Net Information: 0 : [7624] ContentLength=143
+System.Net Information: 0 : [7624] Associating HttpWebRequest#17059405 with ServicePoint#67041637
+System.Net Information: 0 : [7624] Associating Connection#64083652 with HttpWebRequest#17059405
+System.Net Information: 0 : [7624] Associating HttpWebRequest#17059405 with ConnectStream#29475730
+System.Net Information: 0 : [7624] HttpWebRequest#17059405 - Request: POST /api/session HTTP/1.1
+
+System.Net Information: 0 : [7624] ConnectStream#29475730 - Sending headers
+{
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Host: airbrush.nucular-bacon.com
+Content-Length: 78
+Expect: 100-continue
+}.
+System.Net Information: 0 : [7624] Connection#64083652 - Received status line: Version=1.1, StatusCode=100, StatusDescription=Continue.
+System.Net Information: 0 : [7624] Connection#64083652 - Received headers
+{
+
+}.
+System.Net Information: 0 : [7624] Connection#64083652 - Received status line: Version=1.1, StatusCode=201, StatusDescription=Created.
+System.Net Information: 0 : [7624] Connection#64083652 - Received headers
+{
+Access-Control-Allow-Origin: *
+Content-Length: 145
+Content-Type: application/json; charset=utf-8
+Date: Fri, 14 Feb 2014 22:48:03 GMT
+Set-Cookie: airbrush_session=c89c92bdf4efb7f6ec9ae87635b981d0e145ec65d7b157108b52aec6ee7b61c95913662a742e6634feee366cf5c126cd965d1a69b109e42d633ccc966822be52; expires=Sat, 15-Feb-2014 10:48:03 GMT; path=/
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.8
+}.
+System.Net Information: 0 : [7624] ConnectStream#51339472::ConnectStream(Buffered 145 bytes.)
+System.Net Information: 0 : [7624] Associating HttpWebRequest#17059405 with ConnectStream#51339472
+System.Net Information: 0 : [7624] Associating HttpWebRequest#17059405 with HttpWebResponse#28574894
+System.Net Information: 0 : [7624] ContentLength=145
+System.Net Information: 0 : [7624] Associating HttpWebRequest#62258301 with ServicePoint#67041637
+System.Net Information: 0 : [7624] Associating Connection#50160154 with HttpWebRequest#62258301
+System.Net Information: 0 : [7624] Connection#50160154 - Created connection from 192.168.178.24:26680 to 37.200.99.34:80.
+System.Net Information: 0 : [7624] Associating HttpWebRequest#62258301 with ConnectStream#42614420
+System.Net Information: 0 : [7624] HttpWebRequest#62258301 - Request: POST /api/flight HTTP/1.1
+
+System.Net Information: 0 : [7624] ConnectStream#42614420 - Sending headers
+{
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Host: airbrush.nucular-bacon.com
+Cookie: airbrush_session=c89c92bdf4efb7f6ec9ae87635b981d0e145ec65d7b157108b52aec6ee7b61c95913662a742e6634feee366cf5c126cd965d1a69b109e42d633ccc966822be52
+Content-Length: 893675
+Expect: 100-continue
+}.
+System.Net Information: 0 : [7624] Connection#50160154 - Received status line: Version=1.1, StatusCode=100, StatusDescription=Continue.
+System.Net Information: 0 : [7624] Connection#50160154 - Received headers
+{
+
+}.
+System.Net Information: 0 : [7624] Connection#50160154 - Received status line: Version=1.1, StatusCode=201, StatusDescription=Created.
+System.Net Information: 0 : [7624] Connection#50160154 - Received headers
+{
+Access-Control-Allow-Origin: *
+Content-Length: 198
+Content-Type: application/json; charset=utf-8
+Date: Fri, 14 Feb 2014 22:48:17 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.8
+}.
+System.Net Information: 0 : [7624] ConnectStream#38600745::ConnectStream(Buffered 198 bytes.)
+System.Net Information: 0 : [7624] Associating HttpWebRequest#62258301 with ConnectStream#38600745
+System.Net Information: 0 : [7624] Associating HttpWebRequest#62258301 with HttpWebResponse#59311937
+System.Net Information: 0 : [7624] ContentLength=198
+System.Net Information: 0 : [8840] ServicePoint#67041637 - Closed as idle.
+System.Net Information: 0 : [8840] ServicePoint#67041637 - ConnectionGroup#10210506 - Closed as idle.
+System.Net Information: 0 : [7624] Associating HttpWebRequest#51791499 with ServicePoint#48916090
+System.Net Information: 0 : [7624] Associating Connection#53740413 with HttpWebRequest#51791499
+System.Net Information: 0 : [7624] Connection#53740413 - Created connection from 192.168.178.24:27160 to 37.200.99.34:80.
+System.Net Information: 0 : [7624] Associating HttpWebRequest#51791499 with ConnectStream#2399524
+System.Net Information: 0 : [7624] HttpWebRequest#51791499 - Request: GET /api/user?email=McDobusch@gmx.net HTTP/1.1
+
+System.Net Information: 0 : [7624] ConnectStream#2399524 - Sending headers
+{
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Host: airbrush.nucular-bacon.com
+Connection: Keep-Alive
+}.
+System.Net Information: 0 : [7624] Connection#53740413 - Received status line: Version=1.1, StatusCode=200, StatusDescription=OK.
+System.Net Information: 0 : [7624] Connection#53740413 - Received headers
+{
+Access-Control-Allow-Origin: *
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Length: 143
+Content-Type: application/json; charset=utf-8
+Date: Fri, 14 Feb 2014 22:51:39 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.8
+}.
+System.Net Information: 0 : [7624] ConnectStream#40869743::ConnectStream(Buffered 143 bytes.)
+System.Net Information: 0 : [7624] Associating HttpWebRequest#51791499 with ConnectStream#40869743
+System.Net Information: 0 : [7624] Associating HttpWebRequest#51791499 with HttpWebResponse#27199126
+System.Net Information: 0 : [7624] ContentLength=143
+System.Net Information: 0 : [7624] Associating HttpWebRequest#16001149 with ServicePoint#48916090
+System.Net Information: 0 : [7624] Associating Connection#48963094 with HttpWebRequest#16001149
+System.Net Information: 0 : [7624] Connection#48963094 - Created connection from 192.168.178.24:27195 to 37.200.99.34:80.
+System.Net Information: 0 : [7624] Associating HttpWebRequest#16001149 with ConnectStream#55855606
+System.Net Information: 0 : [7624] HttpWebRequest#16001149 - Request: POST /api/session HTTP/1.1
+
+System.Net Information: 0 : [7624] ConnectStream#55855606 - Sending headers
+{
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Host: airbrush.nucular-bacon.com
+Content-Length: 78
+Expect: 100-continue
+}.
+System.Net Information: 0 : [7624] Connection#48963094 - Received status line: Version=1.1, StatusCode=100, StatusDescription=Continue.
+System.Net Information: 0 : [7624] Connection#48963094 - Received headers
+{
+
+}.
+System.Net Information: 0 : [7624] Connection#48963094 - Received status line: Version=1.1, StatusCode=201, StatusDescription=Created.
+System.Net Information: 0 : [7624] Connection#48963094 - Received headers
+{
+Access-Control-Allow-Origin: *
+Content-Length: 145
+Content-Type: application/json; charset=utf-8
+Date: Fri, 14 Feb 2014 22:52:01 GMT
+Set-Cookie: airbrush_session=0a9961e7ecd25c2962043e999a226c33d82ae4a7b541e52e0f33fc19fda0a92d994d1021f879d783db1cf21ab2f524c38fbc0ae0669dec57fbfe7f54db9bf797; expires=Sat, 15-Feb-2014 10:52:01 GMT; path=/
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.8
+}.
+System.Net Information: 0 : [7624] ConnectStream#30474330::ConnectStream(Buffered 145 bytes.)
+System.Net Information: 0 : [7624] Associating HttpWebRequest#16001149 with ConnectStream#30474330
+System.Net Information: 0 : [7624] Associating HttpWebRequest#16001149 with HttpWebResponse#29167576
+System.Net Information: 0 : [7624] ContentLength=145
+System.Net Information: 0 : [7624] Associating HttpWebRequest#24393646 with ServicePoint#48916090
+System.Net Information: 0 : [7624] Associating Connection#23972246 with HttpWebRequest#24393646
+System.Net Information: 0 : [7624] Connection#23972246 - Created connection from 192.168.178.24:27350 to 37.200.99.34:80.
+System.Net Information: 0 : [7624] Associating HttpWebRequest#24393646 with ConnectStream#5009246
+System.Net Information: 0 : [7624] HttpWebRequest#24393646 - Request: POST /api/flight HTTP/1.1
+
+System.Net Information: 0 : [7624] ConnectStream#5009246 - Sending headers
+{
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Host: airbrush.nucular-bacon.com
+Cookie: airbrush_session=0a9961e7ecd25c2962043e999a226c33d82ae4a7b541e52e0f33fc19fda0a92d994d1021f879d783db1cf21ab2f524c38fbc0ae0669dec57fbfe7f54db9bf797
+Content-Length: 243195
+Expect: 100-continue
+}.
+System.Net Information: 0 : [7624] Connection#23972246 - Received status line: Version=1.1, StatusCode=100, StatusDescription=Continue.
+System.Net Information: 0 : [7624] Connection#23972246 - Received headers
+{
+
+}.
+System.Net Information: 0 : [7624] Connection#23972246 - Received status line: Version=1.1, StatusCode=201, StatusDescription=Created.
+System.Net Information: 0 : [7624] Connection#23972246 - Received headers
+{
+Access-Control-Allow-Origin: *
+Content-Length: 198
+Content-Type: application/json; charset=utf-8
+Date: Fri, 14 Feb 2014 22:53:14 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.8
+}.
+System.Net Information: 0 : [7624] ConnectStream#24089510::ConnectStream(Buffered 198 bytes.)
+System.Net Information: 0 : [7624] Associating HttpWebRequest#24393646 with ConnectStream#24089510
+System.Net Information: 0 : [7624] Associating HttpWebRequest#24393646 with HttpWebResponse#10286142
+System.Net Information: 0 : [7624] ContentLength=198
+System.Net Information: 0 : [5532] Current OS installation type is 'Client'.
+System.Net Information: 0 : [5532] RAS supported: True
+System.Net Information: 0 : [5532] Associating HttpWebRequest#62632450 with ServicePoint#41629729
+System.Net Information: 0 : [5532] Associating Connection#61398511 with HttpWebRequest#62632450
+System.Net Information: 0 : [5532] Connection#61398511 - Created connection from 192.168.178.24:1660 to 37.200.99.34:80.
+System.Net Information: 0 : [5532] Associating HttpWebRequest#62632450 with ConnectStream#11469592
+System.Net Information: 0 : [5532] HttpWebRequest#62632450 - Request: GET /api/user?email=McDobusch@gmx.net HTTP/1.1
+
+System.Net Information: 0 : [5532] ConnectStream#11469592 - Sending headers
+{
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Host: airbrush.nucular-bacon.com
+Connection: Keep-Alive
+}.
+System.Net Information: 0 : [5532] Connection#61398511 - Received status line: Version=1.1, StatusCode=200, StatusDescription=OK.
+System.Net Information: 0 : [5532] Connection#61398511 - Received headers
+{
+Access-Control-Allow-Origin: *
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Length: 143
+Content-Type: application/json; charset=utf-8
+Date: Sat, 15 Feb 2014 18:29:37 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.8
+}.
+System.Net Information: 0 : [5532] ConnectStream#46369596::ConnectStream(Buffered 143 bytes.)
+System.Net Information: 0 : [5532] Associating HttpWebRequest#62632450 with ConnectStream#46369596
+System.Net Information: 0 : [5532] Associating HttpWebRequest#62632450 with HttpWebResponse#6257078
+System.Net Information: 0 : [5532] ContentLength=143
+System.Net Information: 0 : [5532] Associating HttpWebRequest#13133063 with ServicePoint#41629729
+System.Net Information: 0 : [5532] Associating Connection#61398511 with HttpWebRequest#13133063
+System.Net Information: 0 : [5532] Associating HttpWebRequest#13133063 with ConnectStream#54116930
+System.Net Information: 0 : [5532] HttpWebRequest#13133063 - Request: POST /api/session HTTP/1.1
+
+System.Net Information: 0 : [5532] ConnectStream#54116930 - Sending headers
+{
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Host: airbrush.nucular-bacon.com
+Content-Length: 78
+Expect: 100-continue
+}.
+System.Net Information: 0 : [5532] Connection#61398511 - Received status line: Version=1.1, StatusCode=100, StatusDescription=Continue.
+System.Net Information: 0 : [5532] Connection#61398511 - Received headers
+{
+
+}.
+System.Net Information: 0 : [5532] Connection#61398511 - Received status line: Version=1.1, StatusCode=201, StatusDescription=Created.
+System.Net Information: 0 : [5532] Connection#61398511 - Received headers
+{
+Access-Control-Allow-Origin: *
+Content-Length: 145
+Content-Type: application/json; charset=utf-8
+Date: Sat, 15 Feb 2014 18:29:37 GMT
+Set-Cookie: airbrush_session=6790c3fd7962319c29cfa2f05e8f899bdde8fb8cc1431e7412d9c131601a10f1f99dc0b00efa4de06bce5b5870076cf7d238bd70c325617d30ad1468cd8a9d14; expires=Sun, 16-Feb-2014 06:29:37 GMT; path=/
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.8
+}.
+System.Net Information: 0 : [5532] ConnectStream#19342748::ConnectStream(Buffered 145 bytes.)
+System.Net Information: 0 : [5532] Associating HttpWebRequest#13133063 with ConnectStream#19342748
+System.Net Information: 0 : [5532] Associating HttpWebRequest#13133063 with HttpWebResponse#65117297
+System.Net Information: 0 : [5532] ContentLength=145
+System.Net Information: 0 : [5532] Associating HttpWebRequest#47283970 with ServicePoint#41629729
+System.Net Information: 0 : [5532] Associating Connection#47403907 with HttpWebRequest#47283970
+System.Net Information: 0 : [5532] Connection#47403907 - Created connection from 192.168.178.24:1661 to 37.200.99.34:80.
+System.Net Information: 0 : [5532] Associating HttpWebRequest#47283970 with ConnectStream#52801053
+System.Net Information: 0 : [5532] HttpWebRequest#47283970 - Request: POST /api/flight HTTP/1.1
+
+System.Net Information: 0 : [5532] ConnectStream#52801053 - Sending headers
+{
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Host: airbrush.nucular-bacon.com
+Cookie: airbrush_session=6790c3fd7962319c29cfa2f05e8f899bdde8fb8cc1431e7412d9c131601a10f1f99dc0b00efa4de06bce5b5870076cf7d238bd70c325617d30ad1468cd8a9d14
+Content-Length: 1037196
+Expect: 100-continue
+}.
+System.Net Information: 0 : [5532] Connection#47403907 - Received status line: Version=1.1, StatusCode=100, StatusDescription=Continue.
+System.Net Information: 0 : [5532] Connection#47403907 - Received headers
+{
+
+}.
+System.Net Information: 0 : [5532] Connection#47403907 - Received status line: Version=1.1, StatusCode=201, StatusDescription=Created.
+System.Net Information: 0 : [5532] Connection#47403907 - Received headers
+{
+Access-Control-Allow-Origin: *
+Content-Length: 199
+Content-Type: application/json; charset=utf-8
+Date: Sat, 15 Feb 2014 18:29:56 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.8
+}.
+System.Net Information: 0 : [5532] ConnectStream#27237168::ConnectStream(Buffered 199 bytes.)
+System.Net Information: 0 : [5532] Associating HttpWebRequest#47283970 with ConnectStream#27237168
+System.Net Information: 0 : [5532] Associating HttpWebRequest#47283970 with HttpWebResponse#17713017
+System.Net Information: 0 : [5532] ContentLength=199
+System.Net Information: 0 : [0612] ServicePoint#41629729 - Closed as idle.
+System.Net Information: 0 : [0612] ServicePoint#41629729 - ConnectionGroup#10210506 - Closed as idle.

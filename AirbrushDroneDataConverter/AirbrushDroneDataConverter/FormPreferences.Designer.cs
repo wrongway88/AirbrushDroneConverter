@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPreferences));
             this.propertyGridLoginData = new System.Windows.Forms.PropertyGrid();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(324, 197);
             this.Controls.Add(this.propertyGridLoginData);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPreferences";
             this.Text = "FormLoginData";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoginData_Close);
